@@ -3,7 +3,7 @@ import React from "react";
 const Register = () => {
   return (
     <div>
-      <form>
+      <form className="w-50 mx-auto">
         <input type="text" placeholder="Name" />
         <br />
         <input type="email" placeholder="Email" />
