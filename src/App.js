@@ -5,6 +5,10 @@ import Footer from "./pages/Shared/Footer/Footer";
 import Header from "./pages/Shared/Header/Header";
 import Login from "../src/pages/Login/Login/Login";
 import Register from "../src/pages/Login/Register/Register";
+import Blog from "./pages/Blog/Blog";
+import NotFound from "./pages/Shared/NotFound/NotFound";
+import About from "./pages/About/About";
+
 function App() {
   return (
     <>
@@ -12,8 +16,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>
