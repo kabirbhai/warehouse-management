@@ -1,27 +1,60 @@
 import React from "react";
+import "./SocialLogin.css";
+import {
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Google from "../../images/social/google.png";
+import GitHub from "../../images/social/github.png";
+import { useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
+  const navigate = useNavigate();
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGithub, githubUser, GithubLoading, GithubError] =
+    useSignInWithGithub(auth);
+
+  let errorMessage;
+  if (user || githubUser) {
+    navigate("/home");
+  }
+  if (error || GithubError) {
+    errorMessage = <div>{error?.message && error?.message}</div>;
+  }
+
   // CUSTOM CSS WITH VARIABLE
   const buttonStyle = {
-    border: "none",
-    backgroundColor: "black",
-    color: "white",
-    borderRadius: "10px ",
+    fontSize: "21px",
+    border: "1px solid black",
+    borderRadius: "5px",
     padding: "10px",
+    transition: " 0.4s",
   };
 
   return (
     <>
       <div>
-        <button style={buttonStyle} className="d-block mx-auto mb-1">
-          Continue with Google
+        <button
+          onClick={() => signInWithGoogle()}
+          style={buttonStyle}
+          className="social-btn d-flex  align-items-center justify-content-around  w-50 mx-auto mb-1"
+        >
+          <img src={Google} alt="" />
+          <span className="px-4 ">Continue with Google</span>
         </button>
       </div>
 
       <div>
-        <button style={buttonStyle} className="d-block mx-auto mb-1">
-          Continue with GitHub
+        <button
+          onClick={() => signInWithGithub()}
+          style={buttonStyle}
+          className="social-btn d-flex align-items-center  justify-content-around w-50 mx-auto mb-1"
+        >
+          <img src={GitHub} alt="" />
+          <span className="px-4 "> Continue with GitHub</span>
         </button>
+        {errorMessage}
       </div>
 
       {/* OR    */}

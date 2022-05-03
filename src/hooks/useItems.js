@@ -4,7 +4,7 @@ const useItems = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("https://secret-oasis-18419.herokuapp.com/")
+    fetch("https://secret-oasis-18419.herokuapp.com/items")
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, []);
