@@ -23,21 +23,11 @@ const SocialLogin = () => {
     errorMessage = <div>{error?.message && error?.message}</div>;
   }
 
-  // CUSTOM CSS WITH VARIABLE
-  const buttonStyle = {
-    fontSize: "21px",
-    border: "1px solid black",
-    borderRadius: "5px",
-    padding: "10px",
-    transition: " 0.4s",
-  };
-
   return (
     <>
       <div>
         <button
           onClick={() => signInWithGoogle()}
-          style={buttonStyle}
           className="social-btn d-flex  align-items-center justify-content-around  w-50 mx-auto mb-1"
         >
           <img src={Google} alt="" />
@@ -48,7 +38,6 @@ const SocialLogin = () => {
       <div>
         <button
           onClick={() => signInWithGithub()}
-          style={buttonStyle}
           className="social-btn d-flex align-items-center  justify-content-around w-50 mx-auto mb-1"
         >
           <img src={GitHub} alt="" />
@@ -58,7 +47,10 @@ const SocialLogin = () => {
       </div>
 
       {/* OR    */}
-      <div className="d-flex align-items-center">
+      <div
+        style={{ margin: "30px" }}
+        className="d-flex align-items-center mx-2"
+      >
         <div style={{ height: "1px" }} className="w-50 bg-success"></div>
         <strong className=" px-2">OR</strong>
         <div style={{ height: "1px" }} className="w-50 bg-success "></div>

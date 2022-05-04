@@ -1,0 +1,27 @@
+.form{
+    background-color: #f4f4f4;
+    padding: 50px;
+    border-radius: 10px;
+    margin-bottom: 60px;
+}
+.form input[type=email],input[type=password],input[type=text] {
+   outline: none;
+   border: 1px solid rgb(255, 229, 229);   
+   border-radius: 5px;
+   padding: 10px;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .form{
+        
+        padding: 15px;
+    }
+    .social-btn{
+        width: 100% !important;
+    }
+    .form-container{
+        width: 100% !important;
+    }
+}

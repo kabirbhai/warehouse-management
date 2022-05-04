@@ -1,6 +1,6 @@
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 const Register = () => {
@@ -25,8 +25,8 @@ const Register = () => {
         <h1 className="my-2 text-center">Please Register</h1>
       </div>
 
-      <div className="w-50 mx-auto">
-        <form onSubmit={handleRegister} className="mt-2">
+      <div className="form-container w-50 mx-auto border rounded  p-2 h-100 pt-5 ">
+        <form onSubmit={handleRegister} className="mt-2 form">
           <input
             className="w-100 rounded p-2 mb-2"
             type="text"
@@ -38,7 +38,7 @@ const Register = () => {
             className="w-100 rounded p-2 mb-2"
             type="email"
             name="email"
-            placeholder="email"
+            placeholder="Email"
           />
           <br />
           <input
@@ -49,10 +49,13 @@ const Register = () => {
           />
           <br />
           <input
-            className="d-block mx-auto mb-2"
+            className="social-btn d-flex align-items-center  justify-content-around w-50 mx-auto "
             type="submit"
             value="Register"
           />
+          <p className="mt-2 text-center">
+            Already have an account? <Link to="/login">Please login</Link>{" "}
+          </p>
         </form>
       </div>
     </>

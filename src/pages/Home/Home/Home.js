@@ -1,11 +1,15 @@
 import React from "react";
-import Banner from "../Banner/Banner";
+import "./Home.css";
+import Banner from "../../../images/banner/banner.png";
+
 import StokeItems from "../StokeItems/StokeItems";
 
 const Home = () => {
   return (
     <div>
-      <Banner />
+      <div className="banner">
+        <img className="img-fluid" src={Banner} alt="" />
+      </div>
       <StokeItems />
     </div>
   );

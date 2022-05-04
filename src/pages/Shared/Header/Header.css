@@ -1,10 +1,14 @@
+
 nav{
     display: flex;
-    background-color: black;
-    color: wheat;
     padding: 20px;
     justify-content: space-between;
+
 }
+
 .nav-item a{
     margin-right: 10px;
+}
+.logout-btn{
+    cursor: pointer;
 }

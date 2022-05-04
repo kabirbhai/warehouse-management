@@ -1,8 +1,8 @@
 import { useState } from "react";
+import "./Login.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-
 import SocialLogin from "../../SocialLogin/SocialLogin";
 
 const Login = () => {
@@ -29,18 +29,18 @@ const Login = () => {
         <h1 className="text-center m-2">Login here</h1>
       </div>
 
-      <div className="w-50 mx-auto">
+      <div className="form-container w-50 mx-auto border rounded  p-2 h-100 pt-5 ">
         <SocialLogin />
-        <form onSubmit={handleLogin} className="mt-2">
+        <form onSubmit={handleLogin} className="form">
           <input
-            className="w-100 rounded p-2 mb-2"
+            className="w-100 mb-2"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="email"
           />
           <br />
           <input
-            className="w-100 rounded p-2 mb-2"
+            className="w-100 mb-3"
             type="password"
             onChange={(e) => setPassword(e.target.value)}
             placeholder="password"
@@ -48,10 +48,13 @@ const Login = () => {
           <br />
           <input
             onClick={() => signInWithEmailAndPassword(email, password)}
-            className="d-block mx-auto mb-2"
+            className="social-btn d-flex align-items-center  justify-content-around w-50 mx-auto "
             type="submit"
             value="Login"
           />
+          <p className="mt-2 text-center ">
+            Don't have an account? <Link to="/register"> Register now</Link>
+          </p>
         </form>
         {errorMessage}
       </div>

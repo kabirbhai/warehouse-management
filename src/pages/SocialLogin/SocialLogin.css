@@ -1,3 +1,11 @@
+.social-btn{
+    font-size: 21px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    transition: 0.4s;
+    
+}
 .social-btn:hover{
     border-radius: 20px !important;
     background-color: #186f06;
