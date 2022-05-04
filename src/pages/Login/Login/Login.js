@@ -17,7 +17,7 @@ const Login = () => {
     navigate("/home");
   }
   if (error) {
-    errorMessage = <p>Wrong password</p>;
+    errorMessage = <p>oops!Wrong password</p>;
   }
   // handleLogin
   const handleLogin = (e) => {
