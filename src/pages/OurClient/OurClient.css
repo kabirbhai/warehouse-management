@@ -1,0 +1,9 @@
+.client-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.client-container img:hover {
+  box-shadow: 1px 2px 3px 1px rgba(235, 186, 186, 0.968);
+}
