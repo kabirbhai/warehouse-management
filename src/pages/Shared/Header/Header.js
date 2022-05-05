@@ -21,9 +21,14 @@ const Header = () => {
           </div>
           <div>
             {user ? (
-              <p className="logout-btn" onClick={() => signOut(auth)}>
-                logout
-              </p>
+              <div className="d-flex">
+                <Link className="logout-btn" to="/myitem">
+                  myItems{" "}
+                </Link>
+                <p className="logout-btn" onClick={() => signOut(auth)}>
+                  logout
+                </p>
+              </div>
             ) : (
               <Link to="/login">Login </Link>
             )}

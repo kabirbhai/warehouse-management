@@ -1,4 +1,5 @@
 import React from "react";
+import { BeakerIcon } from "@heroicons/react/solid";
 import "./Footer.css";
 
 const Footer = () => {
@@ -13,7 +14,10 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <p>social icon</p>
+          <p>
+            <BeakerIcon className="h-5 w-5 text-blue-500" />
+          </p>
+          <p></p>
         </div>
         <div></div>
       </footer>
