@@ -9,7 +9,7 @@ const StokeItems = () => {
   return (
     <>
       <h1 className="text-center my-4 text-danger">AVAILABLE PRODUCTS</h1>
-      <div className="items-container container">
+      <div className="items-container  container">
         {items.map((item) => (
           <Item key={item.id} item={item}></Item>
         ))}
