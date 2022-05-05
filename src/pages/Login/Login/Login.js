@@ -29,7 +29,7 @@ const Login = () => {
         <h1 className="text-center m-2">Login here</h1>
       </div>
 
-      <div className="form-container w-50 mx-auto border rounded  p-2 h-100 pt-5 ">
+      <div className="form-container w-50 mx-auto   p-2 h-100 pt-5 ">
         <SocialLogin />
         <form onSubmit={handleLogin} className="form">
           <input

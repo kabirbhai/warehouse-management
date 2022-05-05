@@ -1,8 +1,12 @@
-import { signOut } from "firebase/auth";
 import React from "react";
+import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import LoginIcon from "../../../images/icon/download.png";
+import LoveIcon from "../../../images/icon/love.png";
+import BagIcon from "../../../images/icon/bag.png";
+import LogoutIcon from "../../../images/icon/logout.png";
 import "./Header.css";
 
 const Header = () => {
@@ -10,28 +14,41 @@ const Header = () => {
   return (
     <div>
       <header>
-        <nav>
-          <div>
-            <Link to="/">SPORTHOUSE</Link>
+        <div className="top-nav-container">
+          <div className="logo">
+            <Link to="/">WAREHOUSE</Link>
           </div>
+          <div className="top-nav">
+            <div>
+              {user ? (
+                <span className="logout-btn" onClick={() => signOut(auth)}>
+                  <img height={32} src={LogoutIcon} alt="" />
+                </span>
+              ) : (
+                <Link to="/login">
+                  <img
+                    className="login-btn"
+                    height={35}
+                    src={LoginIcon}
+                    alt=""
+                  />{" "}
+                </Link>
+              )}
+            </div>
+            <img height={50} src={BagIcon} alt="" />
+
+            <img height={27} src={LoveIcon} alt="" />
+          </div>
+        </div>
+
+        <nav>
           <div className="nav-item">
             <Link to="/">Home</Link>
             <Link to="/blog">Blog</Link>
             <Link to="/about">About us</Link>
           </div>
-          <div>
-            {user ? (
-              <div className="d-flex">
-                <Link className="logout-btn" to="/myitem">
-                  myItems{" "}
-                </Link>
-                <p className="logout-btn" onClick={() => signOut(auth)}>
-                  logout
-                </p>
-              </div>
-            ) : (
-              <Link to="/login">Login </Link>
-            )}
+          <div className="after-login">
+            {user ? <Link to="/myitem">My items</Link> : ""}
           </div>
         </nav>
       </header>

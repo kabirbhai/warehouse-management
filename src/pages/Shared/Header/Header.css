@@ -1,16 +1,54 @@
-
-nav{
-    display: flex;
-    padding: 20px;
-    justify-content: space-between;
-
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap");
+nav {
+  display: flex;
+  padding: 5px 20px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Baloo Bhaijaan 2", cursive;
 }
 
-.nav-item a{
-    margin-right: 10px;
+.nav-item a,
+.after-login a {
+  margin-right: 20px;
+  font-size: 1.2rem;
+  outline: none;
+  text-decoration: none;
+  transition: 4s;
+  color: black;
 }
-.logout-btn{
-    cursor: pointer;
-    text-decoration: none;
-    margin-right: 7px; 
+.nav-item a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+.top-nav-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px 24px;
+  padding-bottom: 0;
+}
+.top-nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding-top: 9px;
+}
+
+.top-nav-container .logo,
+.logo a {
+  color: orange;
+  font-size: 2rem;
+  text-decoration: none;
+  position: absolute;
+  width: 300px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 20px;
+}
+.login-btn,
+.logout-btn {
+  cursor: pointer;
+  color: beige;
 }
