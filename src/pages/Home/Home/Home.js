@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import StokeItems from "../StokeItems/StokeItems";
 import Banner from "../../Banner/Banner";
-import OutClient from "../../OurClient/OutClient";
+import OurClient from "../OurClient/OutClient";
 import WhatNew from "../../WhatNew/WhatNew";
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
       <Banner />
       <StokeItems />
       <WhatNew />
-      <OutClient />
+      <OurClient />
     </div>
   );
 };

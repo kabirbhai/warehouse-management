@@ -5,11 +5,12 @@ import Footer from "./pages/Shared/Footer/Footer";
 import Header from "./pages/Shared/Header/Header";
 import Login from "../src/pages/Login/Login/Login";
 import Register from "../src/pages/Login/Register/Register";
-import RequireAuth from "../src/pages/RequireAuth/RequireAuth";
 import Blog from "./pages/Blog/Blog";
 import NotFound from "./pages/Shared/NotFound/NotFound";
 import About from "./pages/About/About";
 import MyItems from "./pages/MyItems/MyItems";
+import ItemDetail from "./pages/ItemDetail/ItemDetail";
+import RequireAuth from "./pages/Login/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/itemDetail/:ID" element={<ItemDetail />} />
         <Route
           path="/myitem"
           element={

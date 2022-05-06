@@ -4,9 +4,9 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import Google from "../../images/social/google.png";
-import GitHub from "../../images/social/github.png";
+import auth from "../../../firebase.init";
+import Google from "../../../images/social/google.png";
+import GitHub from "../../../images/social/github.png";
 import { useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {

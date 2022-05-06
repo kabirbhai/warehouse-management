@@ -1,9 +1,9 @@
 import React from "react";
 import "./OurClient.css";
-import img1 from "../../images/client/client1.png";
-import img2 from "../../images/client/client2.png";
-import img3 from "../../images/client/client3.png";
-import img4 from "../../images/client/client4.png";
+import img1 from "../../../images/client/client1.png";
+import img2 from "../../../images/client/client2.png";
+import img3 from "../../../images/client/client3.png";
+import img4 from "../../../images/client/client4.png";
 
 const OutClient = () => {
   return (

@@ -1,9 +1,13 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./Item.css";
 
 const Item = (props) => {
-  const { name, img, description, price } = props.item;
+  const { name, _id, img, description, Price } = props.item;
+  const navigate = useNavigate();
 
+  const navigateItemDetail = (id) => {
+    navigate(`/itemDetail/${id}`);
+  };
   return (
     <div className="item-container">
       <img className="img-fluid" src={img} alt="" />
@@ -11,8 +15,13 @@ const Item = (props) => {
         {" "}
         <h1 className="text-center">{name}</h1>
         <p className="text-center">{description}</p>
-        <h1>{price}</h1>
-        <button className="d-block mx-auto">Buy now</button>
+        <h6 className="text-center">price: {Price}</h6>
+        <button
+          onClick={() => navigateItemDetail(_id)}
+          className="d-block mx-auto"
+        >
+          see full details
+        </button>
       </div>
     </div>
   );

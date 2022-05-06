@@ -1,7 +1,8 @@
 import React from "react";
-import { BeakerIcon } from "@heroicons/react/solid";
 import "./Footer.css";
-
+import faceBook from "../../../images/social/facebook.png";
+import instagram from "../../../images/social/instagram.png";
+import twitter from "../../../images/social/twitter.png";
 const Footer = () => {
   const today = new Date().getFullYear();
   return (
@@ -14,10 +15,9 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <p>
-            <BeakerIcon className="h-5 w-5 text-blue-500" />
-          </p>
-          <p></p>
+          <img src={faceBook} alt="" />
+          <img height={20} src={instagram} alt="" />
+          <img src={twitter} alt="" />
         </div>
         <div></div>
       </footer>

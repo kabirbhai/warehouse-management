@@ -3,7 +3,7 @@ import "./Login.css";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import SocialLogin from "../../SocialLogin/SocialLogin";
+import SocialLogin from "../../Login/SocialLogin/SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
