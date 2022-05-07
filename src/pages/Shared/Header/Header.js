@@ -6,7 +6,7 @@ import auth from "../../../firebase.init";
 import LoginIcon from "../../../images/icon/download.png";
 import LoveIcon from "../../../images/icon/love.png";
 import BagIcon from "../../../images/icon/bag.png";
-import LogoutIcon from "../../../images/icon/logout.png";
+
 import "./Header.css";
 
 const Header = () => {
@@ -22,7 +22,8 @@ const Header = () => {
             <div>
               {user ? (
                 <span className="logout-btn" onClick={() => signOut(auth)}>
-                  <img height={32} src={LogoutIcon} alt="" />
+                  {/* <img height={32} src={LogoutIcon} alt="" /> */}
+                  Logout
                 </span>
               ) : (
                 <Link to="/login">
@@ -48,7 +49,15 @@ const Header = () => {
             <Link to="/about">About us</Link>
           </div>
           <div className="after-login">
-            {user ? <Link to="/myitem">My items</Link> : ""}
+            {user ? (
+              <div>
+                <Link to="/myItem">My item</Link>
+                <Link to="/manageItem">Manage item</Link>
+                <Link to="/addItem">Add item</Link>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </nav>
       </header>

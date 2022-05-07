@@ -14,6 +14,7 @@ const ItemDetail = () => {
   return (
     <div>
       <h1>Item details {item.name}</h1>
+      <p>{item.description}</p>
     </div>
   );
 };

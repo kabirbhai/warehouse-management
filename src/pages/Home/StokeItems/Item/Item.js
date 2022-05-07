@@ -20,7 +20,7 @@ const Item = (props) => {
           onClick={() => navigateItemDetail(_id)}
           className="d-block mx-auto"
         >
-          see full details
+          add to bag
         </button>
       </div>
     </div>
