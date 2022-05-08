@@ -8,6 +8,7 @@ import auth from "../../../firebase.init";
 import Google from "../../../images/social/google.png";
 import GitHub from "../../../images/social/github.png";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../../Spinner/Spinner";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
@@ -21,6 +22,9 @@ const SocialLogin = () => {
   }
   if (error || GithubError) {
     errorMessage = <div>{error?.message && error?.message}</div>;
+  }
+  if (loading || GithubLoading) {
+    <Spinner />;
   }
 
   return (

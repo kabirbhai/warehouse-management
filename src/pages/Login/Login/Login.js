@@ -4,6 +4,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialLogin from "../../Login/SocialLogin/SocialLogin";
+import Spinner from "../../Spinner/Spinner";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -15,6 +16,9 @@ const Login = () => {
   let errorMessage;
   if (user) {
     navigate("/home");
+  }
+  if (loading) {
+    <Spinner />;
   }
   if (error) {
     errorMessage = <p>oops!Wrong password</p>;

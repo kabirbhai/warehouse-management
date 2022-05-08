@@ -22,7 +22,6 @@ const Header = () => {
             <div>
               {user ? (
                 <span className="logout-btn" onClick={() => signOut(auth)}>
-                  {/* <img height={32} src={LogoutIcon} alt="" /> */}
                   Logout
                 </span>
               ) : (
@@ -36,7 +35,9 @@ const Header = () => {
                 </Link>
               )}
             </div>
-            <img height={50} src={BagIcon} alt="" />
+            <Link to="/addToBag">
+              <img height={50} src={BagIcon} alt="" />
+            </Link>
 
             <img height={27} src={LoveIcon} alt="" />
           </div>
