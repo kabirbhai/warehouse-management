@@ -6,7 +6,6 @@ import auth from "../../../firebase.init";
 import LoginIcon from "../../../images/icon/download.png";
 import LoveIcon from "../../../images/icon/love.png";
 import BagIcon from "../../../images/icon/bag.png";
-
 import "./Header.css";
 
 const Header = () => {

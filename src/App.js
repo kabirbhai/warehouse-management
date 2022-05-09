@@ -9,11 +9,9 @@ import Blog from "./pages/Blog/Blog";
 import NotFound from "./pages/Shared/NotFound/NotFound";
 import About from "./pages/About/About";
 import MyItems from "./pages/ManageItem/MyItem/MyItems";
-import ItemDetail from "./pages/ItemDetail/ItemDetail";
 import RequireAuth from "./pages/Login/RequireAuth/RequireAuth";
 import ManageItem from "./pages/ManageItem/ManageItem/ManageItem";
 import AddItem from "./pages/ManageItem/AddItem/AddItem";
-import AddToBag from "./pages/Home/AddToBag/AddToBag";
 
 function App() {
   return (
@@ -24,9 +22,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
-        <Route path="/itemDetail/:ID" element={<ItemDetail />} />
 
-        <Route path="/addToBag" element={<AddToBag />} />
         <Route
           path="/myitem"
           element={

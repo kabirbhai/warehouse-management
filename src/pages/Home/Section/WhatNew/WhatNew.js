@@ -1,6 +1,6 @@
 import React from "react";
 import "./WhatNew.css";
-import img1 from "../../images/banner/2.jpg";
+import img1 from "../../../../images/banner/2.jpg";
 
 const WhatNew = () => {
   return (
