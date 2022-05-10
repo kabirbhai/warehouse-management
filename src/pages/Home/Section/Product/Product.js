@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
   const { name, description, img, _id, Price, supplier_name, quantity } =
     product;
+  const navigate = useNavigate();
+
+  const handleUpdate = (id) => {
+    navigate(`/inventory/${id}`);
+  };
   return (
     <>
       <div className="product ">
@@ -14,7 +20,12 @@ const Product = ({ product }) => {
           <h5>{supplier_name}</h5>
           <p>{quantity}</p>
         </div>
-        <button className="d-block mx-auto update-btn">Update</button>
+        <button
+          className="d-block mx-auto update-btn"
+          onClick={() => handleUpdate(_id)}
+        >
+          Update
+        </button>
       </div>
     </>
   );
