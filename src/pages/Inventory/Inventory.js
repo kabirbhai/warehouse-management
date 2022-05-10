@@ -4,9 +4,9 @@ import "./Inventory.css";
 
 const Inventory = () => {
   const { inventoryId } = useParams();
-  const [products, setProducts] = useState();
-
-  console.log(products);
+  const [products, setProducts] = useState({});
+  const { name, Price, quantity, description, _id, supplier_name, img } =
+    products;
 
   useEffect(() => {
     const url = `http://localhost:5000/items/${inventoryId}`;
@@ -16,35 +16,85 @@ const Inventory = () => {
       .then((data) => setProducts(data));
   }, [inventoryId]);
 
+  //descrie
+  const handleQuantity = (minus) => {
+    const count = minus - 1;
+    const update = { count };
+    const url = `http://localhost:5000/items/${inventoryId}`;
+    console.log(url);
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(update),
+    })
+      .then((res) => res.json())
+      .then((data) => setProducts(parseInt(data.count)));
+  };
+
+  //   handleAddToStoke
+  const handleAddToStoke = (e) => {
+    e.preventDefault();
+    const inputQuantity = e.target.addItem.value;
+    const url = `http://localhost:5000/items/${products._id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ quantity: inputQuantity }),
+    })
+      .then((res) => res.json())
+      .then((data) =>
+        setProducts({
+          ...products,
+          quantity: products.quantity + parseInt(inputQuantity),
+        })
+      );
+  };
+
   return (
     <>
       <div className="container inventory-container">
         <div>
-          <img height={200} src={products?.img} alt="" />
+          <img height={200} src={img} alt="" />
         </div>
         <div className="inventory-item">
           <span>
-            Name: <strong> {products?.name}</strong>
+            Name: <strong> {name}</strong>
           </span>
           <span>
-            Quantity: <strong>{products?.quantity}</strong>
+            Quantity: <strong>{quantity}</strong>
           </span>
           <span>
-            Description: <strong>{products?.description}</strong>
+            Description: <strong>{description}</strong>
           </span>
           <span>
-            Shipper: <strong>{products?.supplier_name}</strong>
+            Shipper: <strong>{supplier_name}</strong>
           </span>
           <span>
-            Price: <strong>{products?.Price}</strong>
+            Price: <strong>{Price}</strong>
           </span>
-          <span>id: {products?._id}</span>
+          <span>
+            id:{" "}
+            <button onClick={() => handleQuantity(inventoryId.quantity)}>
+              Delivered
+            </button>
+          </span>
         </div>
       </div>
       <div className="container mt-4 text-center">
         <h1>Add to stoke</h1>
-        <form>
-          <input type="text" placeholder="add to stoke" />
+        <form onSubmit={handleAddToStoke}>
+          <input
+            className="mb-3"
+            type="text"
+            name="addItem"
+            placeholder="Add to stoke"
+          />
+          <br />
+          <input type="submit" value="add Item" />
         </form>
       </div>
       <hr />

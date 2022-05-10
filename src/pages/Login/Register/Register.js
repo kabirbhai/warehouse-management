@@ -29,7 +29,7 @@ const Register = () => {
         <h1 className="my-2 text-center">Please Register</h1>
       </div>
 
-      <div className="form-container w-50 mx-auto border rounded  p-2 h-100 pt-5 ">
+      <div className="form-container container w-50 mx-auto   p-2 h-100 pt-5 ">
         <form onSubmit={handleRegister} className="mt-2 form">
           <input
             className="w-100 rounded p-2 mb-2"

@@ -1,8 +1,12 @@
 .inventory-container {
+  margin-top: 10px;
   display: flex;
   justify-content: space-around;
 }
 .inventory-item {
   display: flex;
   flex-direction: column;
+}
+.inventory-item span {
+  margin-bottom: 6px;
 }
