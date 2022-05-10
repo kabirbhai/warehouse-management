@@ -34,9 +34,8 @@ const Header = () => {
                 </Link>
               )}
             </div>
-            <Link to="/addToBag">
-              <img height={50} src={BagIcon} alt="" />
-            </Link>
+
+            <img height={50} src={BagIcon} alt="" />
 
             <img height={27} src={LoveIcon} alt="" />
           </div>

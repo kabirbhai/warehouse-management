@@ -9,22 +9,12 @@ const WhatNew = () => {
       <div className="what-new-container md:flex-wrap">
         <div className="border">
           <img className="img-fluid" src={img1} alt="" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti
-            odit totam nostrum quae incidunt mollitia dignissimos dolores!
-            Temporibus maiores labore ipsa reiciendis illo odit minima harum
-            fugiat, vero facilis ab.
-          </p>
+          <p>We are adding some new collection.</p>
           <button>See whats new now</button>
         </div>
         <div className="border">
           <img className="img-fluid" src={img1} alt="" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum
-            ipsam suscipit eaque amet velit blanditiis facilis. Voluptatibus
-            vitae laborum aspernatur vero tempore adipisci eos ipsam, officiis
-            similique quidem nobis nihil!
-          </p>
+          <p>We are adding some new collection.</p>
 
           <button>See whats new now</button>
         </div>

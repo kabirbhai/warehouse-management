@@ -1,0 +1,17 @@
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-desc {
+  padding: 22px;
+}
+.update-btn {
+  border: none;
+  width: 50%;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+}
