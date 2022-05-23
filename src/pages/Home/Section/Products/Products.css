@@ -30,3 +30,24 @@
   color: black;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+
+@media only screen and (max-width: 600px) {
+  .inventory-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .inventory-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

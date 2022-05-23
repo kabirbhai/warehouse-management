@@ -12,7 +12,7 @@ const Product = ({ product }) => {
   };
   return (
     <>
-      <section>
+      <section className="inventory-container">
         <Card className="product-desc border-0 " style={{ width: "18rem" }}>
           <Card.Img variant="top" src={img} />
           <Card.Body>
