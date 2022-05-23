@@ -5,7 +5,15 @@
 }
 
 .product-desc {
-  padding: 22px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  background-color: rgb(245, 244, 255);
+}
+.product-desc h2 {
+  text-transform: uppercase;
+}
+.product-desc p {
+  line-height: 11px;
 }
 .update-btn {
   border: none;
@@ -14,4 +22,11 @@
   padding: 10px;
   position: relative;
   bottom: 0;
+  font-size: 20px;
+  transition: 0.2s;
+}
+.update-btn:hover {
+  background-color: #f5f4ff;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }

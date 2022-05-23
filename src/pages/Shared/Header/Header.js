@@ -50,7 +50,7 @@ const Header = () => {
           <div className="after-login">
             {user ? (
               <div>
-                <Link to="/myItem">My item</Link>
+                <Link to="/myItem">My items</Link>
                 <Link to="/manageItem">Manage item</Link>
                 <Link to="/addItem">Add item</Link>
               </div>
