@@ -29,18 +29,20 @@ const Product = ({ product }) => {
               <p>
                 Shipper: <strong>{supplier_name}</strong>
               </p>
-              <p>Desc: {description}</p>
+              <p>
+                Desc: <strong>{description}</strong>
+              </p>
               <p>
                 Quantity: <strong>{quantity}</strong>
               </p>
             </Card.Text>
-            <button
-              className="d-block mx-auto update-btn"
-              onClick={() => handleUpdate(_id)}
-            >
-              Update
-            </button>
           </Card.Body>
+          <button
+            className="d-block mx-auto update-btn"
+            onClick={() => handleUpdate(_id)}
+          >
+            Update
+          </button>
         </Card>
       </section>
     </>

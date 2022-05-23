@@ -4,7 +4,7 @@ import img from "../../../../images/banner/2.jpg";
 
 const Banner = () => {
   return (
-    <Carousel>
+    <Carousel style={{ height: "500px", overflow: "hidden" }}>
       <Carousel.Item>
         <img className="d-block w-100" src={img} alt="First slide" />
         <Carousel.Caption>

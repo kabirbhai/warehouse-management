@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-.banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  height: 100%;
-  position: relative;
-  text-align: center;
-}
+
 .top-center {
   position: absolute;
   top: 15%;
@@ -32,11 +24,4 @@
   background-color: #186f06;
   border-radius: 10px;
   color: white;
-}
-.banner img {
-  width: 100%;
-  height: auto;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
