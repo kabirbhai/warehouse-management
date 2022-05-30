@@ -6,50 +6,50 @@ import "./Inventory.css";
 const Inventory = () => {
   const { inventoryId } = useParams();
   const [items, setItems] = useItems([]);
+
   const { name, price, quantity, desc, _id, shipper, img } = items;
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${inventoryId}`;
+    const url = `https://desolate-waters-59560.herokuapp.com/product/${inventoryId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [inventoryId, setItems, items]);
 
-  //descrie
-  const handleQuantity = (minus) => {
-    const count = minus - 1;
-    const update = { count: count };
-    const url = `http://localhost:5000/items/${inventoryId}`;
+  //decrease quantity
+  const handleDecreaseQuantity = (decrease) => {
+    // const count = minus - 1;
+    // const update = { count: count };
+    // const url = `http://localhost:5000/items/${inventoryId}`;
+    // fetch(url, {
+    //   method: "PUT",
+    //   headers: {
+    //     "content-type": "application/json",
+    //   },
+    //   body: JSON.stringify(update),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => setItems(parseInt(data.count)));
+  };
+
+  //   handleAddToStoke
+  const handleAddToStoke = (event) => {
+    event.preventDefault();
+    const inputQuantity = parseInt(event.target.addItem.value);
+    const updateQuantity = { inputQuantity };
+    console.log(updateQuantity);
+    const url = `https://desolate-waters-59560.herokuapp.com/product/${inventoryId}`;
     fetch(url, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(update),
+      body: JSON.stringify({ quantity: updateQuantity }),
     })
       .then((res) => res.json())
-      .then((data) => setItems(parseInt(data.count)));
-  };
-
-  //   handleAddToStoke
-  const handleAddToStoke = (e) => {
-    e.preventDefault();
-    const inputQuantity = e.target.addItem.value;
-    const url = `http://localhost:5000/items/${items._id}`;
-    fetch(url, {
-      method: "put",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ quantity: inputQuantity }),
-    })
-      .then((res) => res.json())
-      .then((data) =>
-        setItems({
-          ...items,
-          quantity: items.quantity + parseInt(inputQuantity),
-        })
-      );
+      .then((data) => {
+        console.log("success", data);
+      });
   };
 
   return (
@@ -79,9 +79,7 @@ const Inventory = () => {
             Price: <strong>{price}</strong>
           </span>
           <span>
-            <button onClick={() => handleQuantity(inventoryId?.quantity)}>
-              Delivered
-            </button>
+            <button onClick={() => handleDecreaseQuantity()}>Delivered</button>
           </span>
         </div>
       </div>

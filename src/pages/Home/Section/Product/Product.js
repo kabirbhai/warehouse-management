@@ -3,8 +3,7 @@ import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 const Product = ({ product }) => {
-  const { name, description, img, _id, Price, supplier_name, quantity } =
-    product;
+  const { name, desc, img, _id, price, shipper, quantity } = product;
   const navigate = useNavigate();
 
   const handleUpdate = (id) => {
@@ -23,17 +22,17 @@ const Product = ({ product }) => {
               <p>
                 Price:{" "}
                 <small>
-                  <strong>{Price}</strong>
+                  <strong>{price}</strong>
                 </small>
               </p>
               <p>
-                Shipper: <strong>{supplier_name}</strong>
-              </p>
-              <p>
-                Desc: <strong>{description}</strong>
+                Shipper: <strong>{shipper}</strong>
               </p>
               <p>
                 Quantity: <strong>{quantity}</strong>
+              </p>
+              <p>
+                <small>{desc}</small>
               </p>
             </Card.Text>
           </Card.Body>
