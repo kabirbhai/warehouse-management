@@ -16,23 +16,6 @@ const Inventory = () => {
       .then((data) => setItems(data));
   }, [inventoryId, setItems, items]);
 
-  //decrease quantity
-  const handleDecreaseQuantity = (decrease) => {
-    // const count = minus - 1;
-    // const update = { count: count };
-    // const url = `http://localhost:5000/items/${inventoryId}`;
-    // fetch(url, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(update),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => setItems(parseInt(data.count)));
-  };
-
-  //   handleAddToStoke
   const handleAddToStoke = (event) => {
     event.preventDefault();
     const inputQuantity = parseInt(event.target.addItem.value);
@@ -54,32 +37,36 @@ const Inventory = () => {
 
   return (
     <section>
-      <h1 className="text-danger text-center text-uppercase my-2">{name}</h1>
+      <h1 className="text-primary fw-bold text-center text-uppercase my-2">
+        {name}
+      </h1>
       <div className="container inventory-container">
         <div>
           <img className="img-fluid rounded" height={200} src={img} alt="" />
         </div>
         <div className="inventory-item">
-          <span>
+          <h5>
             Name: <strong className="text-uppercase"> {name}</strong>
-          </span>
+          </h5>
           <span>
-            Id: <strong> {_id}</strong>
+            Id: <strong className="text-primary"> {_id}</strong>
           </span>
+          <h5>
+            Quantity: <strong className="text-primary">{quantity}</strong>
+          </h5>
+          <h5>
+            Description: <strong className="text-primary">{desc}</strong>
+          </h5>
+          <h5>
+            Shipper: <strong className="text-primary">{shipper}</strong>
+          </h5>
+          <h5>
+            Price: <strong className="text-primary">{price}</strong>
+          </h5>
           <span>
-            Quantity: <strong>{quantity}</strong>
-          </span>
-          <span>
-            Description: <strong>{desc}</strong>
-          </span>
-          <span>
-            Shipper: <strong>{shipper}</strong>
-          </span>
-          <span>
-            Price: <strong>{price}</strong>
-          </span>
-          <span>
-            <button onClick={() => handleDecreaseQuantity()}>Delivered</button>
+            <button className="btn btn-primary d-block mx-auto">
+              Delivered
+            </button>
           </span>
         </div>
       </div>
@@ -93,7 +80,7 @@ const Inventory = () => {
             placeholder="Add to stoke"
           />
           <br />
-          <input type="submit" value="add Item" />
+          <input className="btn btn-primary" type="submit" value="add Item" />
         </form>
       </div>
     </section>

@@ -7,9 +7,10 @@ import img4 from "../../../../images/client/client4.png";
 
 const OutClient = () => {
   return (
-    <div className="container my-2">
-      <h1 className="text-center my-4 text-danger">Our partners</h1>
-      <div className="client-container">
+    <div className="container  my-2">
+      <hr />
+      <h1 className="text-center  my-4 text-primary">OUR PARTNERS</h1>
+      <div className="client-container ">
         <img src={img1} alt="" />
         <img src={img2} alt="" />
         <img src={img3} alt="" />
